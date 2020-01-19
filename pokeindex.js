@@ -23,8 +23,8 @@ const insertPokeImg = link => {
   const divImg = document.querySelector("#img-container");
   divImg.innerHTML = "";
   const imgTag = document.createElement("img");
-  imgTag.style.width = "100%";
-  imgTag.style.height = "100%";
+  imgTag.style.width = "200px";
+  imgTag.style.height = "200px";
   imgTag.src = link;
   divImg.appendChild(imgTag);
 };
@@ -36,12 +36,8 @@ const insertPokeName = (id, name) => {
   infoDiv.className = "infoDiv";
   const spanId = document.createElement("span");
   spanId.className = "spanId";
-  const spanName = document.createElement("span");
-  spanName.className = "spanId";
-  spanId.textContent = id;
-  spanName.textContent = name;
+  spanId.textContent = `${id} - ${name}`;
   infoDiv.appendChild(spanId);
-  infoDiv.appendChild(spanName);
   pokeInfo.appendChild(infoDiv);
 };
 
@@ -52,17 +48,11 @@ const insertPokeAbility = arrAbilities => {
   const ul = document.createElement("ul");
   ul.className = "abilitiList";
   ul.innerHTML = "";
-
-  const span = document.createElement("span");
-  span.className = "abilitySpan";
-  span.textContent = "ability:";
-
   for (let ability of arrAbilities) {
     const li = document.createElement("li");
     li.className = "pokeElements";
     li.innerHTML = ability.ability.name;
     ul.appendChild(li);
-    pokeInfo.appendChild(span);
     pokeInfo.appendChild(ul);
   }
 };

@@ -3,29 +3,89 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: "Press Start 2P", cursive;
-  width: 100vw;
-  height: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: #0f0f0a;
 }
 #container {
-  width: 100%;
-  height: 100%;
-  background-color: #b3ffff;
+  /*   width: 100%;
+  height: 100%; 
+  background-color: #b3ffff;*/
+  background-image: url("image/pokedex.png");
+  background-size: cover;
+  background-position: center;
+  margin: 20px;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  width: 942px;
+  height: 687px;
+  display: flex;
+  padding-bottom: 56px;
+  padding-left: 44px;
+  padding-right: 21px;
+  padding-top: 178px;
+  box-shadow: -10px 10px 9px -5px black;
+  border-radius: 13px;
+}
+
+#img-container {
+  border-radius: 20px;
+  width: 335px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  margin-top: 7px;
+  margin-right: 108.5px;
+  margin-left: 26px;
+  margin-bottom: 63px;
+  box-shadow: inset -10px 10px 5px 0px rgba(0, 0, 0, 0.28);
   background-image: url("image/pokeBackground.jpg");
   background-size: cover;
+  background-position: center;
+}
+
+#poke-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  margin-top: 28px;
+  padding: 0;
+}
+
+#info-container {
+  border-radius: 20px;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  background-color: #0c1a57;
+  color: white;
+  padding: 15px;
+  height: 150px;
+  width: 380px;
+  font-size: 12px;
+  box-shadow: inset -10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 #header {
-  width: auto;
-  background-color: #0052cc;
-  margin: 0;
   display: flex;
-  justify-content: space-evenly;
-  flex-direction: row;
-  height: auto;
-}
-h1 {
-  margin: 0;
-  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: white;
+  background-color: #02aaf7;
+  box-sizing: border-box;
+  width: 380px;
+  height: 155px;
+  padding: 14px;
+  border-radius: 6px;
+  box-shadow: inset 0px 15px 5px -6px #3bcef8;
+  box-shadow: 0px 0px 9px 0px #0478d1;
 }
 #input-search {
   font-family: "Press Start 2P", cursive;
@@ -33,7 +93,12 @@ h1 {
   height: 40px;
   margin: 13px;
   border-radius: 10px;
-  width: 400px;
+  width: 360px;
+}
+#wrapper {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
 }
 .boton {
   background-color: #d6d6c2;
@@ -46,42 +111,35 @@ h1 {
   font-family: "Press Start 2P", cursive;
   cursor: pointer;
 }
-#x {
-  width: 50px;
-}
 .boton:hover {
   background-color: #6b6b47;
 }
 
-#poke-section {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin-top: 30px;
-}
-#img-container {
-  border: 15px solid #ffb84d;
-  border-radius: 20px;
-  width: 335px;
-  height: 335px;
-  background-color: rgba(230, 255, 255, 0.5);
-}
-#info-container {
-  border: 15px solid #ffb84d;
-  border-radius: 20px;
-  width: 415px;
-  height: auto;
-  padding: 20px;
-  font-size: 25px;
-  background-color: rgba(230, 255, 255, 0.5);
-}
 .infoDiv {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
 
+.spanId {
+  padding: 10px;
+  text-align: center;
+  margin-top: 15px;
+}
+.abilities {
+  margin-top: 0;
+}
+.abilitiList {
+  list-style-type: none;
+  margin-block-start:0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+}
+li{
+  padding:3px;
+}
 #poke-types {
   display: flex;
   flex-direction: row;

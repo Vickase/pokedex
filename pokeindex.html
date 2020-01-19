@@ -18,22 +18,24 @@
   </head>
   <body>
     <div id="container">
-      <header id="header">
-        <h1>INFO</h1>
-        <input
-          type="search"
-          name="buscador"
-          id="input-search"
-          placeholder="Pokédex number..."
-        />
-        <button type="submit" class="boton" id="go-button">Go!</button>
-        <button type="submit" class="boton" id="random-poke">Random pokemon</button>
-        <button type="submit" class="boton" id="x">X</button>
-      </header>
-      <section id="poke-section">
-          <div id="img-container"></div>
-          <div id="info-container"></div>
-        
+      <section id="img-container"></section>
+      <section id="poke-info">
+        <div id="info-container"></div>
+
+        <div id="header">
+          <input
+            type="search"
+            name="buscador"
+            id="input-search"
+            placeholder="Pokédex number..."
+          />
+          <div id="wrapper">
+            <button type="submit" class="boton" id="go-button">Go!</button>
+            <button type="submit" class="boton" id="random-poke">
+              Random pokemon
+            </button>
+          </div>
+        </div>
       </section>
     </div>
     <script src="pokeindex.js"></script>
