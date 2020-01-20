@@ -2,8 +2,6 @@ const handleError = err => {
   alert(`Hubo un error. ${err}`);
 };
 
-let imagen;
-
 const urlBase = "https://pokeapi.co/api/v2/pokemon";
 
 const fetchPokemon = async id => {
@@ -61,39 +59,73 @@ const pokeButton = document.querySelector("#go-button");
 const pokeInput = document.querySelector("#input-search");
 const randomPokemon = document.querySelector("#random-poke");
 
+const isValidPokemon = idPokemon => idPokemon != "" && idPokemon > 0 && idPokemon <= 802;
+
 const getPokemon = () => {
   const idPokemon = document.querySelector("#input-search").value;
-  if (idPokemon != "" && idPokemon > 0 && idPokemon <= 802) {
+  if (isValidPokemon(idPokemon)) {
     fetchPokemon(idPokemon);
   }
 };
+
+const getRandomPokemon = () => {
+  const randomId = Math.floor(Math.random() * 802) + 1;
+  fetchPokemon(randomId);
+  pokeInput.value = randomId;
+};
+
+
 pokeButton.addEventListener("click", getPokemon);
+randomPokemon.addEventListener("click", getRandomPokemon);
 
 pokeInput.addEventListener("keydown", event => {
   if (event.keyCode === 13) {
     getPokemon();
   }
 });
-randomPokemon.addEventListener("click", () => {
-  const randomId = Math.floor(Math.random() * 802) + 1;
-  fetchPokemon(randomId);
-  pokeInput.value = randomId;
-});
+
 
 
 
 const insertPokeTypes = types => {
-  const divPokeInfo= document.querySelector("#info-container");
+  const divPokeInfo = document.querySelector("#info-container");
   const typeDiv = document.createElement("div");
   typeDiv.setAttribute("id", "poke-types");
-  typeDiv.innerHTML="";
-  for(let type of types){
+  typeDiv.innerHTML = "";
+  for (let type of types) {
     let span = document.createElement("span");
-    span.innerHTML=type.type.name;
+    span.innerHTML = type.type.name;
     span.classList.add(`type-${type.type.name}`);
     typeDiv.appendChild(span);
     divPokeInfo.appendChild(typeDiv);
-
   }
-
 };
+
+const previous = document.querySelector("#previous");
+const next = document.querySelector("#next");
+
+const nextPkm = async () => {
+  const input = document.querySelector("#input-search");
+  const pokeId=parseInt(input.value)+ 1;
+  if (isValidPokemon(pokeId)) {
+    fetchPokemon(pokeId);
+    input.value = pokeId;
+  }
+};
+
+const previousPkm = async () => {
+  const input = document.querySelector("#input-search");
+  const pokeId=parseInt(input.value)- 1;
+  if (isValidPokemon(pokeId)) {
+    fetchPokemon(pokeId);
+    input.value = pokeId;
+  }
+};
+
+next.addEventListener("click", nextPkm);
+previous.addEventListener("click", previousPkm);
+
+window.addEventListener("load",getRandomPokemon);
+
+
+

@@ -8,9 +8,7 @@ body {
   background-color: #0f0f0a;
 }
 #container {
-  /*   width: 100%;
-  height: 100%; 
-  background-color: #b3ffff;*/
+
   background-image: url("image/pokedex.png");
   background-size: cover;
   background-position: center;
@@ -52,7 +50,6 @@ body {
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  margin-top: 28px;
   padding: 0;
 }
 
@@ -113,6 +110,14 @@ body {
 }
 .boton:hover {
   background-color: #6b6b47;
+}
+#nav-button-wrap{
+  margin:5px;
+}
+.arrow{
+  width: 130px;
+  height: 40px;
+  padding: 10px;
 }
 
 .infoDiv {
